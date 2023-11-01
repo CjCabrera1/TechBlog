@@ -1,7 +1,7 @@
 {
-    "name": "TechBlog",
+    "name": "tech-blog",
     "version": "1.0.0",
-    "description": "tech blog using express, sequelize etc. in a MVC data flow",
+    "description": "",
     "main": "server.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
