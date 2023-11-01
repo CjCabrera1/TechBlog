@@ -2,13 +2,13 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Users extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+class User extends Model {
+  checkPassword(loginPass) {
+    return bcrypt.compareSync(loginPass, this.password);
   }
 }
 
-Users.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -47,4 +47,15 @@ Users.init(
   }
 );
 
-module.exports = Users;
+User.associate = (models) => {
+  User.hasMany(models.Post, {
+    foreignKey: 'users_id',
+    onDelete: 'CASCADE',
+  });
+  User.hasMany(models.Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+};
+
+module.exports = User;

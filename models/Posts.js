@@ -12,7 +12,7 @@ Posts.init(
       autoIncrement: true,
     },
     post_title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING, // This should match your database column name
       allowNull: false,
     },
     post_content: {
@@ -36,7 +36,7 @@ Posts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'posts',
   }
 );
 
