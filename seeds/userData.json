@@ -1,10 +1,27 @@
 [
     {
-    "user_name": "john_doe",
-    "password": "password123"
+        "user_name": "john_doe",
+        "email": "johndoe1@gmail.com",
+        "password": "password123"
     },
     {
-    "user_name": "jane_smith",
-    "password": "password456"
+        "user_name": "jane_smith",
+        "email": "janesmith1@gmail.com",
+        "password": "password456"
+    },
+    {
+        "user_name": "alice_jones",
+        "email": "alicejones@gmail.com",
+        "password": "securepass789"
+    },
+    {
+        "user_name": "bob_miller",
+        "email": "bobmiller@gmail.com",
+        "password": "strongpassword321"
+    },
+    {
+        "user_name": "emily_white",
+        "email": "emilywhite@gmail.com",
+        "password": "myp@ssword"
     }
 ]

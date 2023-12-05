@@ -1,0 +1,21 @@
+<div class="card w-50 m-5 shadow" data-created="{{blogPost.date_created}}" id="{{user_id}}">
+  <div class="card-body">
+    <input type="text" class="form-control m-1 input-bar" id="blog-title" value="{{blogPost.title}}" data-id="{{blogPost.id}}">
+  </div>
+  <div class="card-body row">
+    <div class="col-12">
+      <textarea id="description" class="form-control m-1 input-bar" name="" id="" cols="30" rows="10">{{blogPost.description}}</textarea>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <button class="btn btn-secondary m-1" id="public">Public</button>
+        <button class="btn btn-secondary m-1" id="private">Private</button>
+      </div>
+      <div>
+        <button type="Save" class="btn btn-success m-1" id="submit">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/edit.js"></script>
