@@ -1,44 +1,45 @@
 [
     {
-      "content": "Great post!",
-      "user_id": 2,
-      "post_id": 1,
-      "date_created": "January 25, 2023"
+      "text": "Great post!",
+      "author_id": 2,
+      "blogpost_id": 1,
+      "date_created": "2023-01-25"
     },
     {
-      "content": "I learned a lot from this!",
-      "user_id": 1,
-      "post_id": 2,
-      "date_created": "January 27, 2023"
+      "text": "I learned a lot from this!",
+      "author_id": 1,
+      "blogpost_id": 2,
+      "date_created": "2023-01-27"
     },
     {
-        "content": "This is insightful!",
-        "user_id": 3,
-        "post_id": 4,
-        "date_created": "February 12, 2023"
+      "text": "This is insightful!",
+      "author_id": 3,
+      "blogpost_id": 4,
+      "date_created": "2023-02-12"
     },
     {
-        "content": "I completely agree with the author!",
-        "user_id": 2,
-        "post_id": 3,
-        "date_created": "February 15, 2023"
+      "text": "I completely agree with the author!",
+      "author_id": 2,
+      "blogpost_id": 3,
+      "date_created": "2023-02-15"
     },
     {
-        "content": "Well-written and thought-provoking.",
-        "user_id": 4,
-        "post_id": 5,
-        "date_created": "February 18, 2023"
+      "text": "Well-written and thought-provoking.",
+      "author_id": 4,
+      "blogpost_id": 5,
+      "date_created": "2023-02-18"
     },
     {
-        "content": "I had a different perspective, but this made me reconsider.",
-        "user_id": 1,
-        "post_id": 4,
-        "date_created": "February 22, 2023"
+      "text": "I had a different perspective, but this made me reconsider.",
+      "author_id": 1,
+      "blogpost_id": 4,
+      "date_created": "2023-02-22"
     },
     {
-        "content": "Looking forward to more discussions on this topic.",
-        "user_id": 5,
-        "post_id": 3,
-        "date_created": "February 25, 2023"
+      "text": "Looking forward to more discussions on this topic.",
+      "author_id": 5,
+      "blogpost_id": 3,
+      "date_created": "2023-02-25"
     }
-]
+  ]
+  

@@ -1,65 +1,116 @@
-const express = require('express');
-const router = express.Router();
-const { Post, Comment, User } = require('../models');
+const router = require('express').Router();
+const { BlogPost, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-// Get All Posts
-router.get('/posts', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const posts = await Post.findAll({
+    const data = await BlogPost.findAll({
+      where: { public: true}, 
       include: [
         {
-          model: User,
-          attributes: ['username'],
-        },
-        {
-          model: Comment,
-          attributes: ['content', 'created_at'],
-          include: { model: User, attributes: ['username'] },
-        },
-      ],
+          model: User, 
+          foreignKey: 'author_id',
+          attributes: ['username']
+        }
+      ] 
+      
     });
-    res.status(200).json(posts);
+    
+    const publicPosts = data.map(blogpost => blogpost.dataValues);
+    console.log(publicPosts);
+    res.render('homePage', {
+      publicPosts,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Get a Specific Post
-router.get('/posts/:id', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
-    const post = await Post.findByPk(req.params.id, {
+    const blogPostData = await User.findByPk(req.session.user_id, {
       include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-        {
-          model: Comment,
-          attributes: ['content', 'created_at'],
-          include: { model: User, attributes: ['username'] },
-        },
-      ],
+        { 
+          model: BlogPost 
+        }, 
+      ]
     });
-    if (!post) {
-      res.status(404).json({ message: 'No post found with this id' });
-      return;
-    }
-    res.status(200).json(post);
+
+    const data = blogPostData.get({ plain: true });
+    const blogPosts = data.blogposts
+    const username = blogPostData.dataValues.username
+    res.render('profile', {
+      blogPosts,
+      username,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Add a Comment to a Post
-router.post('/posts/:id/comments', async (req, res) => {
+router.get('/create', withAuth, async (req, res) => {
   try {
-    // Create a new comment and associate it with the specified post and user
-    const newComment = await Comment.create({
-      ...req.body,
-      post_id: req.params.id,
-      user_id: req.session.userId, // Assuming you're using user sessions
+    res.render('create', {
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
     });
-    res.status(201).json(newComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to homepage
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('landingPage');
+});
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const blogPostData = await BlogPost.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    const blogPost = blogPostData.get({ plain: true });
+    console.log(blogPost);
+    res.render('edit', { blogPost, logged_in: req.session.logged_in, user_id: req.session.user_id  });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get('/post/:id', async (req, res) => {
+  try {
+    const blogPostData = await BlogPost.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        { 
+          model: Comment,
+          include: [
+            { 
+              model: User,
+              attributes: ['username']
+            }, 
+          ] 
+        }, 
+      ]    
+    });
+
+    const blogPost = blogPostData.get({ plain: true });
+
+    res.render('post', { blogPost, logged_in: req.session.logged_in, user_id: req.session.user_id  });
   } catch (err) {
     res.status(400).json(err);
   }

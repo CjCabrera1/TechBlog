@@ -1,0 +1,35 @@
+<div>
+  <div class="row g-0">
+    <div class="col-auto">
+      <h2 class="text-center m-5 g-0">Welcome {{username}}!</h2>
+    </div>
+  </div>
+  <div class="d-flex flex-column-reverse mx-2">
+  {{#each blogPosts as |blogPost| }}
+    <div class="row m-1 col-11">
+      <div class="card p-0 card shadow">
+        <div class="card-header px-3 d-flex justify-content-between">
+          <h2>{{blogPost.title}} 
+            <span class="small-t">
+            {{#if blogPost.public}}
+            (public)
+            {{else}}
+            (private)
+            {{/if}}
+            </span>
+          </h2>
+          <p>Posted on {{blogPost.date_created}}</p>
+        </div>
+        <div class="card-body" id="{{blogPost.id}}">
+          <p class="card-text p-3">{{blogPost.description}}</p>
+          <button type="submit" class="btn btn-primary m-1 bg-danger" id="delete">Delete</button>
+          <button type="submit" class="btn btn-primary m-1" id="edit">Edit</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</div>
+
+<script src="/js/profile.js"></script>
+

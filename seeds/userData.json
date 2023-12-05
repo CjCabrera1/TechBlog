@@ -1,27 +1,52 @@
 [
     {
-        "user_name": "john_doe",
+        "username": "john_doe",
         "email": "johndoe1@gmail.com",
         "password": "password123"
     },
     {
-        "user_name": "jane_smith",
+        "username": "jane_smith",
         "email": "janesmith1@gmail.com",
         "password": "password456"
     },
     {
-        "user_name": "alice_jones",
+        "username": "alice_jones",
         "email": "alicejones@gmail.com",
         "password": "securepass789"
     },
     {
-        "user_name": "bob_miller",
+        "username": "bob_miller",
         "email": "bobmiller@gmail.com",
         "password": "strongpassword321"
     },
     {
-        "user_name": "emily_white",
+        "username": "emily_white",
         "email": "emilywhite@gmail.com",
         "password": "myp@ssword"
+    },
+    {
+        "username": "mark_jackson",
+        "email": "markjackson@gmail.com",
+        "password": "password789"
+    },
+    {
+        "username": "sara_miller",
+        "email": "saramiller@gmail.com",
+        "password": "securepass123"
+    },
+    {
+        "username": "chris_smith",
+        "email": "chrissmith@gmail.com",
+        "password": "strongpassword456"
+    },
+    {
+        "username": "linda_jones",
+        "email": "lindajones@gmail.com",
+        "password": "myp@ssword789"
+    },
+    {
+        "username": "alex_white",
+        "email": "alexwhite@gmail.com",
+        "password": "pass1234"
     }
 ]

@@ -1,51 +1,51 @@
 [
-    {
-      "post_title": "Tech Trends in 2023",
-      "content": "This year, we will see amazing advancements in tech.",
-      "user_id": 1,
-      "public": true,
-      "date_created": "january 15, 2023"
-    },
-    {
-      "post_title": "Web Development Best Practices",
-      "content": "Learn about best practices for web development.",
-      "user_id": 2,
-      "public": true,
-      "date_created": "february 15, 2023"
-    },
-    {
-      "post_title": "AI and its Impact on Healthcare",
-      "content": "Exploring the transformative potential of AI in healthcare.",
-      "user_id": 3,
-      "public": true,
-      "date_created": "March 1, 2023"
+  {
+    "title": "Tech Trends in 2023",
+    "description": "This year, we will see amazing advancements in tech.",
+    "author_id": 1,
+    "public": true,
+    "date_created": "2023-01-15"
   },
   {
-      "post_title": "The Future of Sustainable Energy",
-      "content": "Discussing the latest innovations in sustainable energy solutions.",
-      "user_id": 4,
-      "public": true,
-      "date_created": "March 10, 2023"
+    "title": "Web Development Best Practices",
+    "description": "Learn about best practices for web development.",
+    "author_id": 2,
+    "public": true,
+    "date_created": "2023-02-15"
   },
   {
-      "post_title": "Exploring the Cosmos: Space Exploration in 2023",
-      "content": "Unveiling the latest discoveries and missions in space exploration.",
-      "user_id": 5,
-      "public": true,
-      "date_created": "March 20, 2023"
+    "title": "AI and its Impact on Healthcare",
+    "description": "Exploring the transformative potential of AI in healthcare.",
+    "author_id": 3,
+    "public": true,
+    "date_created": "2023-03-01"
   },
   {
-      "post_title": "Diving into Quantum Computing",
-      "content": "Understanding the principles and potential applications of quantum computing.",
-      "user_id": 1,
-      "public": true,
-      "date_created": "March 25, 2023"
+    "title": "The Future of Sustainable Energy",
+    "description": "Discussing the latest innovations in sustainable energy solutions.",
+    "author_id": 4,
+    "public": true,
+    "date_created": "2023-03-10"
   },
   {
-      "post_title": "The Art of User Experience Design",
-      "content": "Crafting user experiences that delight and engage.",
-      "user_id": 2,
-      "public": true,
-      "date_created": "April 5, 2023"
+    "title": "Exploring the Cosmos: Space Exploration in 2023",
+    "description": "Unveiling the latest discoveries and missions in space exploration.",
+    "author_id": 5,
+    "public": true,
+    "date_created": "2023-03-20"
+  },
+  {
+    "title": "Diving into Quantum Computing",
+    "description": "Understanding the principles and potential applications of quantum computing.",
+    "author_id": 1,
+    "public": true,
+    "date_created": "2023-03-25"
+  },
+  {
+    "title": "The Art of User Experience Design",
+    "description": "Crafting user experiences that delight and engage.",
+    "author_id": 2,
+    "public": true,
+    "date_created": "2023-04-05"
   }
-  ]
+]

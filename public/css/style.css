@@ -1,6 +1,6 @@
 header,
 .project:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #f52c2c;
 }
 
 .no-button {
@@ -23,7 +23,7 @@ header,
 }
 
 .selected {
-  border: 2px solid #ffffff;
+  border: 2px solid #ec5252;
   background-color: #1c7ab7;
 }
 
@@ -37,7 +37,7 @@ header,
 
 .none {
   text-decoration: none;
-  color: #ffffff;
+  color: #f35454;
 }
 
 .none:hover {
