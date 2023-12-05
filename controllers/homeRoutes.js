@@ -70,7 +70,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('landingPage');
+  res.render('login');
 });
 
 router.get('/edit/:id', withAuth, async (req, res) => {
