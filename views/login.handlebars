@@ -12,14 +12,14 @@
     <main>
         <form id="login-form" action="/api/users/login" method="POST">
             <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="username-input" class="form-label">Username</label>
+                <input type="input" class="form-control" id="username-input">
             </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+               <label for="password-input" class="form-label">Password</label>
+			    <input type="password" id="password-input" class="form-control">
             </div>
-            <button type="submit">Login</button>
+           <button id="login" type="button" class="btn btn-primary btn-lg">Log In</button>
         </form>
         <p>Don't have an account? <a href="/signup">Sign up here</a></p>
     </main>
