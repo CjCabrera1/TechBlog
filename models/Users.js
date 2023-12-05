@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class User extends Model {
-  checkPassword(loginPass) {
-    return bcrypt.compareSync(loginPass, this.password);
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
@@ -16,9 +16,17 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     password: {
       type: DataTypes.STRING,
@@ -43,19 +51,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'users',
+    modelName: 'user',
   }
 );
-
-User.associate = (models) => {
-  User.hasMany(models.Post, {
-    foreignKey: 'users_id',
-    onDelete: 'CASCADE',
-  });
-  User.hasMany(models.Comment, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE',
-  });
-};
 
 module.exports = User;

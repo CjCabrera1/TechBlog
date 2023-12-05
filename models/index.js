@@ -1,29 +1,35 @@
-// models/index.js
-const Users = require('./Users');
-const Posts = require('./Posts');
-const Comments = require('./Comments');
+const User = require('./User');
+const BlogPost = require('./BlogPost');
+const Comment = require('./Comment')
 
-// Define associations
-Users.hasMany(Posts, {
-  foreignKey: 'users_id',
+
+User.hasMany(BlogPost, {
+  foreignKey: 'author_id',
   onDelete: 'CASCADE'
 });
 
-Posts.belongsTo(Users, {
-  foreignKey: 'users_id'
+BlogPost.belongsTo(User, {
+  foreignKey: 'author_id'
 });
 
-Posts.hasMany(Comments, {
-  foreignKey: 'post_id',
-  onDelete: 'CASCADE'
+BlogPost.hasMany(Comment, {
+  foreignKey: 'blogpost_id'
+})
+
+BlogPost.belongsTo(User, {
+  foreignKey: 'author_id'
+})
+
+User.hasMany(Comment, {
+  foreignKey: 'author_id',
 });
 
-Comments.belongsTo(Posts, {
-  foreignKey: 'post_id'
-});
+Comment.belongsTo(User, {
+  foreignKey: 'author_id'
+})
 
-Comments.belongsTo(Users, {
-  foreignKey: 'user_id' // Add this association to connect Comments to Users
-});
+Comment.belongsTo(BlogPost, {
+  foreignKey: 'blogpost_id'
+})
 
-module.exports = { Users, Posts, Comments };
+module.exports = { User, BlogPost, Comment };

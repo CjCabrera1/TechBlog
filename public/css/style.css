@@ -1,0 +1,79 @@
+header,
+.project:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #2a96ff;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #1c7ab7;
+  text-decoration: underline;
+}
+
+.input-bar {
+  width: 99%;
+}
+
+.selected {
+  border: 2px solid #ffffff;
+  background-color: #1c7ab7;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+}
+
+.small-t {
+  font-size: 15px;
+}
+
+.none {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.none:hover {
+  text-decoration: none;
+}
+
+.post {
+  margin: 50px 15%;
+}
+
+.bottom-border {
+  border-bottom: 2px solid #000000;
+}
+
+.mr-50 {
+  margin-right: 100px;
+}
+
+.my-50 {
+  margin-top: 50px;
+}
+
+.mb-10 {
+  padding-bottom: 20px;
+}
+
+.comment {
+  margin: 0 25%;
+}
+
+.home {
+  max-width: 1000px;
+  min-width: 75%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}

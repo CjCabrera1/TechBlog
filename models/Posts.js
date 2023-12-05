@@ -12,7 +12,7 @@ Posts.init(
       autoIncrement: true,
     },
     post_title: {
-      type: DataTypes.STRING, // This should match your database column name
+      type: DataTypes.STRING,
       allowNull: false,
     },
     post_content: {
