@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     
     const publicPosts = data.map(blogpost => blogpost.dataValues);
     console.log(publicPosts);
-    res.render('homePage', {
+    res.render('homepage', {
       publicPosts,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id
